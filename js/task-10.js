@@ -23,13 +23,12 @@ function createBoxes(currentValue) {
 
 inputNumber.addEventListener("change", (value) => {
     activeNumber = inputNumber.value;
-    console.log(activeNumber);
 });
 
-btnCreate.addEventListener("click", () => {
-    createBoxes(activeNumber);
-});
+btnCreate.addEventListener("click", () => createBoxes(activeNumber));
 
 btnDestroy.addEventListener("click", () => {
-    document.querySelector("#boxes").remove();
+    for (let el of document.querySelectorAll("#boxes div")) {
+        el.remove();
+    }
 });
